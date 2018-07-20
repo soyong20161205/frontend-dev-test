@@ -1,0 +1,42 @@
+<div class="w3-container login-container">
+    <form [@shake]="shakeState" 
+        (ngSubmit)="onSubmit()" 
+        #loginForm="ngForm"
+        class="w3-card-4 login-card ng-trigger ng-trigger-loginState ng-untouched ng-pristine ng-valid" 
+        novalidate="">
+
+        <header class="w3-container w3-blue">
+            <h1 class="ng-tns-c4-0">Login</h1>
+        </header>
+
+        <div class="w3-container w3-margin">
+            <label class="ng-tns-c4-0">Username</label>
+            <input required
+                [(ngModel)]="usernameText"
+                #username="ngModel"
+                id="username"
+                class="w3-input ng-untouched ng-pristine ng-valid" name="username" type="text" />
+            <div [hidden]="username.valid || username.pristine" class="alert alert-danger">
+                username is required
+            </div>
+
+            <label class="ng-tns-c4-0">Password</label>
+            <input required
+                [(ngModel)]="passwordText"
+                #password="ngModel"
+                id="password"
+                class="w3-input ng-untouched ng-pristine ng-valid" name="password" type="password" />
+            <div [hidden]="password.valid || password.pristine" class="alert alert-danger">
+                password is required
+            </div> 
+        </div>
+
+        <footer class="w3-container w3-blue">
+            <button 
+                [disabled]="!loginForm.form.valid"
+                type="submit" 
+                class="w3-btn w3-small w3-margin w3-right w3-white">Login</button>
+        </footer>
+
+    </form>
+</div>

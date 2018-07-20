@@ -1,0 +1,23 @@
+
+
+.login-container {
+    text-align: center;
+    width: 100%;
+    display: block;
+
+}
+
+.login-card {
+	text-align: left;
+    max-width: 600px;
+    min-width: 300px;
+    width: 80%;
+    margin: 100px auto 0;
+    display: inline-block;
+
+         animation: shake 5000ms ease-in-out;
+}
+
+.alert-danger { 
+	color:red;
+}
